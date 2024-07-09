@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmoifsecoqovy"]
+
+[ext_resource type="AudioStream" uid="uid://cjms66ly7k6fg" path="res://Assets/Sounds/abstract-noise-vhs-static-01.wav" id="1_2nxv6"]
+[ext_resource type="Script" path="res://Scripts/SoundScripts/Loops/LoopVHS.gd" id="2_dsajx"]
+
+[node name="VHSLoop" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_2nxv6")
+autoplay = true
+bus = &"VHSStatic"
+script = ExtResource("2_dsajx")

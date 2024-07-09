@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=3 uid="uid://bd3kw710tgx6m"]
+
+[ext_resource type="AudioStream" uid="uid://ck8iymgx1ku6l" path="res://Assets/Sounds/foley-step-gravel-single-01.wav" id="1_4ulhq"]
+[ext_resource type="AudioStream" uid="uid://ch7ly63ihhn1i" path="res://Assets/Sounds/foley-step-gravel-single-02.wav" id="2_bykom"]
+[ext_resource type="Script" path="res://Scripts/SoundScripts/Footstep.gd" id="2_k58qs"]
+[ext_resource type="AudioStream" uid="uid://l10p1g2w7sbw" path="res://Assets/Sounds/foley-step-gravel-single-03.wav" id="3_1651g"]
+[ext_resource type="AudioStream" uid="uid://em13lvs7xc25" path="res://Assets/Sounds/foley-step-gravel-single-04.wav" id="4_6doq6"]
+[ext_resource type="AudioStream" uid="uid://gvckn1vwp4k7" path="res://Assets/Sounds/foley-step-gravel-single-05.wav" id="5_l5bxn"]
+[ext_resource type="AudioStream" uid="uid://iopvgyhwmvb4" path="res://Assets/Sounds/foley-step-gravel-single-06.wav" id="6_babwo"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fcvu6"]
+streams_count = 6
+stream_0/stream = ExtResource("1_4ulhq")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_bykom")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_1651g")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_6doq6")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("5_l5bxn")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("6_babwo")
+stream_5/weight = 1.0
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+stream = SubResource("AudioStreamRandomizer_fcvu6")
+autoplay = true
+script = ExtResource("2_k58qs")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

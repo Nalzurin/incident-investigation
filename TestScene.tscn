@@ -1,8 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://3ifs4ycqgcrs"]
+[gd_scene load_steps=14 format=3 uid="uid://3ifs4ycqgcrs"]
 
 [ext_resource type="Texture2D" uid="uid://b6tt3n8sm3t53" path="res://Assets/Images/3442970.jpg" id="1_hx5gv"]
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_wqfyr"]
-[ext_resource type="Shader" path="res://Scripts/Shaders/PS1PP.gdshader" id="2_qdra7"]
+[ext_resource type="PackedScene" uid="uid://uavtrx6sdwwe" path="res://Scenes/Player.tscn" id="2_s3lb2"]
+[ext_resource type="Script" path="res://Scripts/InteractableScript.gd" id="4_246b1"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/Redacted.gdshader" id="5_8r2jn"]
+[ext_resource type="Texture2D" uid="uid://b6r0cwrypu6tg" path="res://Assets/Images/Logo.png" id="5_rvm3b"]
+[ext_resource type="Texture2D" uid="uid://ca5cq4n6sxi1g" path="res://Assets/Images/Redacted.png" id="6_6ff6l"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_60nm4"]
 panorama = ExtResource("1_hx5gv")
@@ -16,36 +19,32 @@ background_mode = 2
 sky = SubResource("Sky_a158a")
 sky_rotation = Vector3(0, 0, -3.88336)
 ambient_light_source = 3
-ambient_light_color = Color(0, 0, 0.556863, 0.584314)
+ambient_light_color = Color(0, 0.00784314, 0.164706, 0.584314)
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.1
+reflected_light_source = 2
+tonemap_exposure = 0.5
 fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 0.7965
 fog_height_density = 16.0
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_au2vq"]
-exposure_multiplier = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_js712"]
 albedo_color = Color(0, 0.368627, 0, 1)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_w7frc"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h8ark"]
-points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vo0o2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5we1y"]
 render_priority = 0
-shader = ExtResource("2_qdra7")
-shader_parameter/color_depth = 2
-shader_parameter/dithering = true
-shader_parameter/resolution_scale = 11
+shader = ExtResource("5_8r2jn")
+shader_parameter/scroll_speed = Vector2(3, 5)
+shader_parameter/static_intensity = 0.8
+shader_parameter/color = Color(0.709804, 0.709804, 0.709804, 1)
+shader_parameter/tex_scale = 0.5
+shader_parameter/albedo_tex = ExtResource("6_6ff6l")
 
-[sub_resource type="QuadMesh" id="QuadMesh_t1kdp"]
-material = SubResource("ShaderMaterial_vo0o2")
-flip_faces = true
-size = Vector2(2, 2)
+[sub_resource type="SphereShape3D" id="SphereShape3D_htiht"]
+radius = 1.0
 
 [node name="Node3D" type="Node3D"]
 
@@ -63,36 +62,10 @@ use_collision = true
 size = Vector3(50, 0.001, 50)
 material = SubResource("StandardMaterial3D_js712")
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08061, 0)
-script = ExtResource("1_wqfyr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_w7frc")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("ConvexPolygonShape3D_h8ark")
-
-[node name="Head" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.650407, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Player/Head"]
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Player/Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00449485, -0.0460014, -0.550521)
-light_energy = 10.0
-light_indirect_energy = 10.0
-light_volumetric_fog_energy = 10.0
-light_size = 1.0
-shadow_enabled = true
-distance_fade_enabled = true
-spot_range = 789.618
-spot_attenuation = 0.217638
-spot_angle = 60.0
-
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64684, 0.999523, -0.0409071)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.647, 1.001, 0)
 use_collision = true
+material = SubResource("ShaderMaterial_5we1y")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64684, 0.999523, -2.94226)
@@ -102,8 +75,18 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64684, 0.999523, -4.38982)
 use_collision = true
 
-[node name="FilterPS1" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163747, 0.0259528, 0.0296905)
-visible = false
-extra_cull_margin = 112.85
-mesh = SubResource("QuadMesh_t1kdp")
+[node name="Interactable" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6619, 1.15162, 1.39775)
+script = ExtResource("4_246b1")
+prompt_message = "Logo"
+prompt_description = "Appears to be the logo of our company..."
+
+[node name="Collision" type="CollisionShape3D" parent="Interactable"]
+shape = SubResource("SphereShape3D_htiht")
+
+[node name="Sprite" type="Sprite3D" parent="Interactable"]
+billboard = 2
+alpha_cut = 1
+texture = ExtResource("5_rvm3b")
+
+[node name="Player" parent="." instance=ExtResource("2_s3lb2")]

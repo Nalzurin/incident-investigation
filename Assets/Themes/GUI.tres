@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dgf42gpxjh5n0"]
+
+[ext_resource type="FontFile" uid="uid://cipayd0gvmahn" path="res://Assets/Fonts/HomeVideo-BLG6G.ttf" id="1_p7s4m"]
+
+[resource]
+default_font = ExtResource("1_p7s4m")
+default_font_size = 16

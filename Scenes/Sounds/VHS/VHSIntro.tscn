@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c50vurqmie0am"]
+
+[ext_resource type="AudioStream" uid="uid://b63w3tyfv77nq" path="res://Assets/Sounds/LIHOCORP.wav" id="1_cvg8n"]
+[ext_resource type="Script" path="res://Scripts/SoundScripts/VHSIntro.gd" id="2_twvao"]
+
+[node name="VHSINtro" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_cvg8n")
+autoplay = true
+script = ExtResource("2_twvao")

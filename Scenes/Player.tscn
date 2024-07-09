@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://uavtrx6sdwwe"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_cyjjv"]
+[ext_resource type="PackedScene" uid="uid://dgngav0o0lxs5" path="res://Scenes/RaycastPlayer.tscn" id="2_cs7ns"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/PS1PP.gdshader" id="3_8o57l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w7frc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h8ark"]
+points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icgob"]
+render_priority = 0
+shader = ExtResource("3_8o57l")
+shader_parameter/color_depth = 4
+shader_parameter/dithering = true
+shader_parameter/resolution_scale = 5
+
+[sub_resource type="QuadMesh" id="QuadMesh_t1kdp"]
+material = SubResource("ShaderMaterial_icgob")
+flip_faces = true
+size = Vector2(2, 2)
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("FootstepNodeLeft", "FootstepNodeRight", "StepTimer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08061, 0)
+script = ExtResource("1_cyjjv")
+FootstepNodeLeft = NodePath("Head/FootstepsLeft")
+FootstepNodeRight = NodePath("Head/FootstepsRight")
+StepTimer = NodePath("StepCooldown")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_w7frc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_h8ark")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.650407, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00449485, -0.0460014, -0.550521)
+light_energy = 10.0
+light_indirect_energy = 10.0
+light_volumetric_fog_energy = 10.0
+light_size = 1.0
+shadow_enabled = true
+distance_fade_enabled = true
+spot_range = 789.618
+spot_attenuation = 0.217638
+spot_angle = 60.0
+
+[node name="RaycastPlayer" parent="Head/Camera3D" instance=ExtResource("2_cs7ns")]
+
+[node name="FootstepsLeft" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.650407, 0)
+
+[node name="FootstepsRight" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.65, 0)
+
+[node name="FilterPS1" type="MeshInstance3D" parent="."]
+extra_cull_margin = 112.85
+mesh = SubResource("QuadMesh_t1kdp")
+skeleton = NodePath("../..")
+
+[node name="StepCooldown" type="Timer" parent="."]
+
+[connection signal="timeout" from="StepCooldown" to="." method="_on_step_cooldown_timeout"]

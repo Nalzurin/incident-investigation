@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgngav0o0lxs5"]
+
+[ext_resource type="Script" path="res://Scripts/InteractRay.gd" id="1_jbyof"]
+[ext_resource type="Theme" uid="uid://dgf42gpxjh5n0" path="res://Assets/Themes/GUI.tres" id="2_laiot"]
+[ext_resource type="FontFile" uid="uid://e1r5pqworu7j" path="res://Assets/Fonts/Roboto-Regular.ttf" id="3_c31sw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o3gff"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 0.819608)
+
+[node name="RaycastPlayer" type="RayCast3D" node_paths=PackedStringArray("prompt", "message", "container", "description", "timeout")]
+target_position = Vector3(0, 0, -1)
+collide_with_areas = true
+script = ExtResource("1_jbyof")
+prompt = NodePath("Prompt")
+message = NodePath("Message")
+container = NodePath("PanelContainer")
+description = NodePath("PanelContainer/MarginContainer/Description")
+timeout = NodePath("TimeoutDesc")
+
+[node name="Prompt" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 10.0
+offset_right = 20.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_laiot")
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 30.0
+offset_right = 20.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_laiot")
+theme_type_variation = &"HeaderSmall"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o3gff")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Description" type="Label" parent="PanelContainer/MarginContainer"]
+texture_filter = 2
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.641934, 0.641934, 0.641934, 1)
+theme_override_fonts/font = ExtResource("3_c31sw")
+theme_override_font_sizes/font_size = 8
+text = "Appears to be the logo of our company"
+autowrap_mode = 2
+
+[node name="TimeoutDesc" type="Timer" parent="."]
+
+[connection signal="timeout" from="TimeoutDesc" to="." method="_on_timeout_desc_timeout"]

@@ -1,0 +1,314 @@
+[gd_scene load_steps=15 format=3 uid="uid://dticjce4d21sf"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu/Intro-Sequence.gd" id="1_q1i8g"]
+[ext_resource type="Texture2D" uid="uid://54jimlah87dw" path="res://Assets/Images/Footage-Classified.png" id="1_qrhsa"]
+[ext_resource type="Texture2D" uid="uid://b6r0cwrypu6tg" path="res://Assets/Images/Logo.png" id="1_xg5b8"]
+[ext_resource type="Texture2D" uid="uid://bgvmefkthl7tl" path="res://Assets/Images/Backdrop.png" id="2_0h65c"]
+[ext_resource type="Texture2D" uid="uid://fccec5ls6p58" path="res://Assets/Images/Footage-Title.png" id="5_gomcy"]
+[ext_resource type="Texture2D" uid="uid://m0116mbixka" path="res://Assets/Images/Cognitohazards.png" id="6_0kw2v"]
+[ext_resource type="FontFile" uid="uid://cipayd0gvmahn" path="res://Assets/Fonts/HomeVideo-BLG6G.ttf" id="7_l3xsh"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/MenuCursor.gd" id="8_k2lcf"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/MenuTraveler.gd" id="8_tvfdk"]
+[ext_resource type="Script" path="res://Scripts/MainMenu/MenuItem.gd" id="10_hxhq3"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/blur.gdshader" id="11_g4nkh"]
+[ext_resource type="Texture2D" uid="uid://b8bq03ef6cdrp" path="res://Assets/Images/investigation-task-assignment.png" id="11_wcoh0"]
+[ext_resource type="Texture2D" uid="uid://bpuo0wg2pum72" path="res://Assets/Images/automated-incident-log.png" id="12_mxkc6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ffbd8"]
+shader = ExtResource("11_g4nkh")
+shader_parameter/lod = 5.0
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("ClickAnywhere", "FootageClassified", "Logo", "FootageTitle", "Cognitohazards", "IntroSequence", "MainMenu")]
+script = ExtResource("1_q1i8g")
+ClickAnywhere = NodePath("CanvasLayer/PressAny")
+FootageClassified = NodePath("CanvasLayer/IntroSequence/FootageClassified")
+Logo = NodePath("CanvasLayer/IntroSequence/Logo")
+FootageTitle = NodePath("CanvasLayer/IntroSequence/Footage Title")
+Cognitohazards = NodePath("CanvasLayer/IntroSequence/Cognitohazards")
+IntroSequence = NodePath("CanvasLayer/IntroSequence")
+MainMenu = NodePath("CanvasLayer/MainMenu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Backdrop" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("2_0h65c")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="PressAny" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -9.0
+offset_right = 84.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = "CLICK ANYWHERE"
+
+[node name="IntroSequence" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FootageClassified" type="TextureRect" parent="CanvasLayer/IntroSequence"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("1_qrhsa")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Logo" type="TextureRect" parent="CanvasLayer/IntroSequence"]
+visible = false
+modulate = Color(1, 0, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -45.0
+offset_right = 45.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(45, 45)
+size_flags_vertical = 3
+texture = ExtResource("1_xg5b8")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Footage Title" type="TextureRect" parent="CanvasLayer/IntroSequence"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("5_gomcy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Cognitohazards" type="TextureRect" parent="CanvasLayer/IntroSequence"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("6_0kw2v")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MainMenu" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("MenuOptions", "MenuDocuments", "DocumentsControl", "DocumentTask", "DocumentLog")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_tvfdk")
+MenuOptions = NodePath("VBoxContainer/MenuOptions")
+MenuDocuments = NodePath("VBoxContainer/Documents")
+DocumentsControl = NodePath("../DocumentControl")
+DocumentTask = NodePath("../DocumentControl/Task")
+DocumentLog = NodePath("../DocumentControl/Log")
+
+[node name="Cursor" type="Label" parent="CanvasLayer/MainMenu" node_paths=PackedStringArray("menu_parent")]
+texture_filter = 1
+layout_mode = 2
+offset_left = -23.0
+offset_top = 23.0
+offset_right = 97.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = ">"
+script = ExtResource("8_k2lcf")
+menu_parent = NodePath("../VBoxContainer/MenuOptions")
+cursor_offset = Vector2(-5, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -65.0
+offset_right = 60.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Menu" type="Label" parent="CanvasLayer/MainMenu/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = "---MENU---"
+
+[node name="MenuOptions" type="VBoxContainer" parent="CanvasLayer/MainMenu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Start Footage" type="Label" parent="CanvasLayer/MainMenu/VBoxContainer/MenuOptions"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = "start"
+script = ExtResource("10_hxhq3")
+
+[node name="Documents" type="Label" parent="CanvasLayer/MainMenu/VBoxContainer/MenuOptions"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = "documents"
+script = ExtResource("10_hxhq3")
+
+[node name="Settings" type="Label" parent="CanvasLayer/MainMenu/VBoxContainer/MenuOptions"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = "Settings
+"
+script = ExtResource("10_hxhq3")
+
+[node name="Exit" type="Label" parent="CanvasLayer/MainMenu/VBoxContainer/MenuOptions"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = "Exit"
+script = ExtResource("10_hxhq3")
+
+[node name="Documents" type="VBoxContainer" parent="CanvasLayer/MainMenu/VBoxContainer"]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Task" type="Label" parent="CanvasLayer/MainMenu/VBoxContainer/Documents"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = "Assignment"
+script = ExtResource("10_hxhq3")
+
+[node name="Log" type="Label" parent="CanvasLayer/MainMenu/VBoxContainer/Documents"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = "incident log"
+script = ExtResource("10_hxhq3")
+
+[node name="Return" type="Label" parent="CanvasLayer/MainMenu/VBoxContainer/Documents"]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_l3xsh")
+theme_override_font_sizes/font_size = 20
+text = "return"
+script = ExtResource("10_hxhq3")
+
+[node name="DocumentControl" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blur" type="ColorRect" parent="CanvasLayer/DocumentControl"]
+material = SubResource("ShaderMaterial_ffbd8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Task" type="TextureRect" parent="CanvasLayer/DocumentControl"]
+texture_filter = 1
+custom_minimum_size = Vector2(127, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -105.5
+offset_right = 74.0
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("11_wcoh0")
+expand_mode = 5
+
+[node name="Log" type="TextureRect" parent="CanvasLayer/DocumentControl"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(127, 180)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -95.0
+offset_right = 70.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("12_mxkc6")
+expand_mode = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[connection signal="doc_toggled" from="CanvasLayer/MainMenu" to="CanvasLayer/MainMenu/Cursor" method="_on_main_menu_doc_toggled"]
+[connection signal="menu_changed" from="CanvasLayer/MainMenu" to="CanvasLayer/MainMenu/Cursor" method="_on_main_menu_menu_changed"]
+[connection signal="menu_item_selected" from="CanvasLayer/MainMenu/VBoxContainer/MenuOptions/Start Footage" to="CanvasLayer/MainMenu" method="_play"]
+[connection signal="menu_item_selected" from="CanvasLayer/MainMenu/VBoxContainer/MenuOptions/Documents" to="CanvasLayer/MainMenu" method="_documents"]
+[connection signal="menu_item_selected" from="CanvasLayer/MainMenu/VBoxContainer/MenuOptions/Settings" to="CanvasLayer/MainMenu" method="_settings"]
+[connection signal="menu_item_selected" from="CanvasLayer/MainMenu/VBoxContainer/MenuOptions/Exit" to="CanvasLayer/MainMenu" method="_exit"]
+[connection signal="menu_item_selected" from="CanvasLayer/MainMenu/VBoxContainer/Documents/Task" to="CanvasLayer/MainMenu" method="_document_task"]
+[connection signal="menu_item_selected" from="CanvasLayer/MainMenu/VBoxContainer/Documents/Log" to="CanvasLayer/MainMenu" method="_document_log"]
+[connection signal="menu_item_selected" from="CanvasLayer/MainMenu/VBoxContainer/Documents/Return" to="CanvasLayer/MainMenu" method="_documents_back"]
