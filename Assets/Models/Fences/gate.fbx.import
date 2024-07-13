@@ -1,0 +1,45 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bsw37sr6ts2li"
+path="res://.godot/imported/gate.fbx-82a48a9eac6e2e0a3c40cf839479fa4e.scn"
+
+[deps]
+
+source_file="res://Assets/Models/Fences/gate.fbx"
+dest_files=["res://.godot/imported/gate.fbx-82a48a9eac6e2e0a3c40cf839479fa4e.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"TexturesCom_MetalVarious0026_1_seamless_S": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Fences/MetalWireMesh.tres"
+},
+"rusted_pipe": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/Fences/RustedPipe.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

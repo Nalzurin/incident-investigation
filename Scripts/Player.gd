@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var FootstepSound = preload("res://Scenes/Sounds/3D/FootstepPlayer.tscn")
+@onready var FootstepSound = preload("res://Scenes/Sounds/3D/FootstepPlayer2.tscn")
 @export var FootstepNodeLeft : Node3D
 @export var FootstepNodeRight : Node3D
 @export var StepTimer : Timer
@@ -16,7 +16,6 @@ var step_left = true
 const BOB_FREQ = 2
 const BOB_AMP = 0.04
 var t_bob = 0
-
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
@@ -24,8 +23,13 @@ const FOV_CHANGE = 1.5
 var gravity = 9.8
 @onready var head = $Head
 @onready var camera = $Head/Camera3D 
+@onready var color_rect = $CanvasLayer/ColorRect
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if(!GameManager.is_web):
+		color_rect.visible = true
+		
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -89,3 +93,8 @@ func _headbob(time) -> Vector3:
 
 func _on_step_cooldown_timeout():
 	can_step = true
+
+
+func _on_hitbox_body_entered(body):
+	if(body.name == "Dino" and GameManager.being_chased):
+		GameManager._caught_by_dino()

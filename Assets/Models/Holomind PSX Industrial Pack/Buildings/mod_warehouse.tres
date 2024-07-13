@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://doys2j8wybdr1"]
+
+[ext_resource type="Texture2D" uid="uid://c4q4c2hvl3oir" path="res://Assets/Models/Holomind PSX Industrial Pack/Buildings/tex_warehouse_1.jpg" id="1_r8nbe"]
+
+[resource]
+albedo_texture = ExtResource("1_r8nbe")

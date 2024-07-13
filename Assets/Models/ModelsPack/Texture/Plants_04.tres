@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://Assets/Models/ModelsPack/Texture/Plants_04.png" id="1_c3y82"]
+
+[resource]
+albedo_texture = ExtResource("1_c3y82")

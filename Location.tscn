@@ -1,0 +1,461 @@
+[gd_scene load_steps=37 format=3 uid="uid://b84kpepf6cf68"]
+
+[ext_resource type="Texture2D" uid="uid://cuhihvhjegmjb" path="res://Assets/Textures/Grass.png" id="1_2cvk1"]
+[ext_resource type="Texture2D" uid="uid://bdmd17rtybu2u" path="res://Assets/Textures/Bush1.png" id="2_wfjgl"]
+[ext_resource type="Texture2D" uid="uid://dsd12r7f28crt" path="res://Assets/Textures/Bush2.png" id="3_h88ol"]
+[ext_resource type="Texture2D" uid="uid://dsayhpaflumnd" path="res://Assets/Textures/Bush3.png" id="4_yo4io"]
+[ext_resource type="Texture2D" uid="uid://w08o4f1id1wk" path="res://Assets/Textures/Bush4.png" id="5_awuqu"]
+[ext_resource type="Texture2D" uid="uid://kx66a0wy5y1g" path="res://Assets/Textures/Bush5.png" id="6_qwjy0"]
+[ext_resource type="Texture2D" uid="uid://tx6sb7mb6l3y" path="res://Assets/Textures/Tree_Collection.png" id="7_dcyh7"]
+[ext_resource type="Texture2D" uid="uid://brhswnk1tjgnu" path="res://Assets/Textures/tree_collection_1K.png" id="8_gl1hs"]
+[ext_resource type="Texture2D" uid="uid://7f2urynd32lk" path="res://Assets/Textures/ShrubTile.png" id="9_y8r81"]
+[ext_resource type="PackedScene" uid="uid://wk2rgfhwtlf2" path="res://Assets/Models/Furniture/Models/All.fbx" id="13_ecl7y"]
+[ext_resource type="PackedScene" uid="uid://kfyljgrfphmu" path="res://Assets/Models/ModelsPack/Models/models.dae" id="14_sodfa"]
+[ext_resource type="PackedScene" uid="uid://4n2ipfuofnop" path="res://Assets/Models/Industrial_exterior_v2/Models/IndustrialHorror_PS_like.fbx" id="15_6ymgf"]
+[ext_resource type="PackedScene" uid="uid://d0g58xila8o6e" path="res://Assets/Models/tree_pack_1.1/models/tree26.fbx" id="16_q8mok"]
+[ext_resource type="PackedScene" uid="uid://0hlkdc17ct4j" path="res://Assets/Models/tree_pack_1.1/models/tree23.fbx" id="17_f38ih"]
+[ext_resource type="PackedScene" uid="uid://dcgk2pbysumg" path="res://Assets/Models/Minas/Models/Mines.dae" id="19_pmssq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_saftc"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4wc3"]
+size = Vector3(50, 10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlmlp"]
+transparency = 2
+alpha_scissor_threshold = 0.0
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("9_y8r81")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_5uxnc"]
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("StandardMaterial3D_qlmlp")
+size = Vector2(50, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ex4pj"]
+transparency = 2
+alpha_scissor_threshold = 0.83
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_wfjgl")
+
+[sub_resource type="QuadMesh" id="QuadMesh_t0svo"]
+material = SubResource("StandardMaterial3D_ex4pj")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksqlx"]
+transparency = 2
+alpha_scissor_threshold = 0.82
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("3_h88ol")
+
+[sub_resource type="QuadMesh" id="QuadMesh_s27xm"]
+material = SubResource("StandardMaterial3D_ksqlx")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr46h"]
+transparency = 2
+alpha_scissor_threshold = 0.82
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("4_yo4io")
+
+[sub_resource type="QuadMesh" id="QuadMesh_iui5r"]
+material = SubResource("StandardMaterial3D_wr46h")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noh0m"]
+transparency = 2
+alpha_scissor_threshold = 0.82
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("5_awuqu")
+
+[sub_resource type="QuadMesh" id="QuadMesh_iwe6g"]
+material = SubResource("StandardMaterial3D_noh0m")
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fujv5"]
+transparency = 2
+alpha_scissor_threshold = 0.82
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("6_qwjy0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8a53d"]
+lightmap_size_hint = Vector2i(12, 12)
+material = SubResource("StandardMaterial3D_fujv5")
+add_uv2 = true
+size = Vector2(2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y31xm"]
+transparency = 2
+alpha_scissor_threshold = 0.82
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("7_dcyh7")
+
+[sub_resource type="QuadMesh" id="QuadMesh_57025"]
+lightmap_size_hint = Vector2i(77, 52)
+material = SubResource("StandardMaterial3D_y31xm")
+add_uv2 = true
+size = Vector2(15, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2q0n"]
+transparency = 2
+alpha_scissor_threshold = 0.826
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("8_gl1hs")
+
+[sub_resource type="QuadMesh" id="QuadMesh_5sgjq"]
+lightmap_size_hint = Vector2i(77, 52)
+material = SubResource("StandardMaterial3D_h2q0n")
+add_uv2 = true
+size = Vector2(15, 10)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_nq1kt"]
+vertices = PackedVector3Array(-24.5, 0, -24.5, -24.5, 0, 24.5, 24.5, 0, 24.5, 24.5, 0, -24.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6eok"]
+albedo_texture = ExtResource("1_2cvk1")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_bq716"]
+material = SubResource("StandardMaterial3D_q6eok")
+size = Vector3(50, 1, 50)
+
+[node name="Location" type="Node3D"]
+
+[node name="Groundc" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Groundc"]
+shape = SubResource("BoxShape3D_saftc")
+
+[node name="ForestWalls" type="Node3D" parent="."]
+
+[node name="ForestBackdrop" type="StaticBody3D" parent="ForestWalls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ForestWalls/ForestBackdrop"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.10439, 0.211686, 5.53802)
+shape = SubResource("BoxShape3D_f4wc3")
+
+[node name="BackdropForest" type="MeshInstance3D" parent="ForestWalls/ForestBackdrop"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.10439, 0.211686, 5.53802)
+mesh = SubResource("QuadMesh_5uxnc")
+skeleton = NodePath("../../..")
+
+[node name="BushType1" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.65281, 0.211686, 5.01772)
+mesh = SubResource("QuadMesh_t0svo")
+skeleton = NodePath("../..")
+
+[node name="BushType2" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.42789, 0.211686, 5.03305)
+mesh = SubResource("QuadMesh_s27xm")
+skeleton = NodePath("../..")
+
+[node name="BushType3" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.25535, 0.211686, 5.04773)
+mesh = SubResource("QuadMesh_iui5r")
+skeleton = NodePath("../..")
+
+[node name="BushType4" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.80894, 0.211686, 5.06583)
+mesh = SubResource("QuadMesh_iwe6g")
+skeleton = NodePath("../..")
+
+[node name="BushType5" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.62403, 0.280233, 5.21675)
+mesh = SubResource("QuadMesh_8a53d")
+skeleton = NodePath("../..")
+
+[node name="ForestDead1" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.60291, 4.08111, 5.38896)
+mesh = SubResource("QuadMesh_57025")
+skeleton = NodePath("../..")
+
+[node name="ForestAlive1" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 1.44954, 4.55179, 5.28303)
+mesh = SubResource("QuadMesh_5sgjq")
+skeleton = NodePath("../..")
+
+[node name="BushType6" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.861834, 0.211686, 5.01772)
+mesh = SubResource("QuadMesh_t0svo")
+skeleton = NodePath("../..")
+
+[node name="BushType7" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.36308, 0.211686, 5.03305)
+mesh = SubResource("QuadMesh_s27xm")
+skeleton = NodePath("../..")
+
+[node name="BushType8" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.53562, 0.211686, 5.04773)
+mesh = SubResource("QuadMesh_iui5r")
+skeleton = NodePath("../..")
+
+[node name="BushType9" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.98204, 0.211686, 5.06583)
+mesh = SubResource("QuadMesh_iwe6g")
+skeleton = NodePath("../..")
+
+[node name="BushType10" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.16695, 0.280233, 5.21675)
+mesh = SubResource("QuadMesh_8a53d")
+skeleton = NodePath("../..")
+
+[node name="BushType11" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.0678, 0.211686, 5.01772)
+mesh = SubResource("QuadMesh_t0svo")
+skeleton = NodePath("../..")
+
+[node name="BushType12" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 12.8429, 0.211686, 5.03305)
+mesh = SubResource("QuadMesh_s27xm")
+skeleton = NodePath("../..")
+
+[node name="BushType13" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.6703, 0.211686, 5.04773)
+mesh = SubResource("QuadMesh_iui5r")
+skeleton = NodePath("../..")
+
+[node name="BushType14" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.2239, 0.211686, 5.06583)
+mesh = SubResource("QuadMesh_iwe6g")
+skeleton = NodePath("../..")
+
+[node name="BushType15" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.90226, 0.280233, 5.21675)
+mesh = SubResource("QuadMesh_8a53d")
+skeleton = NodePath("../..")
+
+[node name="BushType16" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10.0614, 0.211686, 5.01772)
+mesh = SubResource("QuadMesh_t0svo")
+skeleton = NodePath("../..")
+
+[node name="BushType17" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -11.2863, 0.211686, 5.03305)
+mesh = SubResource("QuadMesh_s27xm")
+skeleton = NodePath("../..")
+
+[node name="BushType18" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.4588, 0.211686, 5.04773)
+mesh = SubResource("QuadMesh_iui5r")
+skeleton = NodePath("../..")
+
+[node name="BushType19" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.9052, 0.211686, 5.06583)
+mesh = SubResource("QuadMesh_iwe6g")
+skeleton = NodePath("../..")
+
+[node name="BushType20" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.0901, 0.280233, 5.21675)
+mesh = SubResource("QuadMesh_8a53d")
+skeleton = NodePath("../..")
+
+[node name="ForestDead2" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.81238, 4.08111, 5.38896)
+mesh = SubResource("QuadMesh_57025")
+skeleton = NodePath("../..")
+
+[node name="ForestAlive2" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -15.9657, 4.55179, 5.28303)
+mesh = SubResource("QuadMesh_5sgjq")
+skeleton = NodePath("../..")
+
+[node name="BushType21" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.5535, 0.211686, 5.01772)
+mesh = SubResource("QuadMesh_t0svo")
+skeleton = NodePath("../..")
+
+[node name="BushType22" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.7784, 0.211686, 5.03305)
+mesh = SubResource("QuadMesh_s27xm")
+skeleton = NodePath("../..")
+
+[node name="BushType23" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -18.9509, 0.211686, 5.04773)
+mesh = SubResource("QuadMesh_iui5r")
+skeleton = NodePath("../..")
+
+[node name="BushType24" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20.3973, 0.211686, 5.06583)
+mesh = SubResource("QuadMesh_iwe6g")
+skeleton = NodePath("../..")
+
+[node name="BushType25" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.5822, 0.280233, 5.21675)
+mesh = SubResource("QuadMesh_8a53d")
+skeleton = NodePath("../..")
+
+[node name="BushType26" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.34748, 0.211686, 5.01772)
+mesh = SubResource("QuadMesh_t0svo")
+skeleton = NodePath("../..")
+
+[node name="BushType27" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.5724, 0.211686, 5.03305)
+mesh = SubResource("QuadMesh_s27xm")
+skeleton = NodePath("../..")
+
+[node name="BushType28" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.74494, 0.211686, 5.04773)
+mesh = SubResource("QuadMesh_iui5r")
+skeleton = NodePath("../..")
+
+[node name="BushType29" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.19136, 0.211686, 5.06583)
+mesh = SubResource("QuadMesh_iwe6g")
+skeleton = NodePath("../..")
+
+[node name="BushType30" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.37627, 0.280233, 5.21675)
+mesh = SubResource("QuadMesh_8a53d")
+skeleton = NodePath("../..")
+
+[node name="BushType31" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22.0633, 0.211686, 5.01772)
+mesh = SubResource("QuadMesh_t0svo")
+skeleton = NodePath("../..")
+
+[node name="BushType32" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 20.8384, 0.211686, 5.03305)
+mesh = SubResource("QuadMesh_s27xm")
+skeleton = NodePath("../..")
+
+[node name="BushType33" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.6659, 0.211686, 5.04773)
+mesh = SubResource("QuadMesh_iui5r")
+skeleton = NodePath("../..")
+
+[node name="BushType34" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.2195, 0.211686, 5.06583)
+mesh = SubResource("QuadMesh_iwe6g")
+skeleton = NodePath("../..")
+
+[node name="BushType35" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.0346, 0.280233, 5.21675)
+mesh = SubResource("QuadMesh_8a53d")
+skeleton = NodePath("../..")
+
+[node name="ForestDead3" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.3123, 4.08111, 5.38896)
+mesh = SubResource("QuadMesh_57025")
+skeleton = NodePath("../..")
+
+[node name="ForestAlive3" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 16.1589, 4.55179, 5.28303)
+mesh = SubResource("QuadMesh_5sgjq")
+skeleton = NodePath("../..")
+
+[node name="BushType36" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 15.5712, 0.211686, 5.01772)
+mesh = SubResource("QuadMesh_t0svo")
+skeleton = NodePath("../..")
+
+[node name="BushType37" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.3463, 0.211686, 5.03305)
+mesh = SubResource("QuadMesh_s27xm")
+skeleton = NodePath("../..")
+
+[node name="BushType38" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 13.1738, 0.211686, 5.04773)
+mesh = SubResource("QuadMesh_iui5r")
+skeleton = NodePath("../..")
+
+[node name="BushType39" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.7274, 0.211686, 5.06583)
+mesh = SubResource("QuadMesh_iwe6g")
+skeleton = NodePath("../..")
+
+[node name="BushType40" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 10.5425, 0.280233, 5.21675)
+mesh = SubResource("QuadMesh_8a53d")
+skeleton = NodePath("../..")
+
+[node name="BushType41" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28.7772, 0.211686, 5.01772)
+mesh = SubResource("QuadMesh_t0svo")
+skeleton = NodePath("../..")
+
+[node name="BushType42" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 27.5523, 0.211686, 5.03305)
+mesh = SubResource("QuadMesh_s27xm")
+skeleton = NodePath("../..")
+
+[node name="BushType43" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 26.3797, 0.211686, 5.04773)
+mesh = SubResource("QuadMesh_iui5r")
+skeleton = NodePath("../..")
+
+[node name="BushType44" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 24.9333, 0.211686, 5.06583)
+mesh = SubResource("QuadMesh_iwe6g")
+skeleton = NodePath("../..")
+
+[node name="BushType45" type="MeshInstance3D" parent="ForestWalls"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 23.7484, 0.280233, 5.21675)
+mesh = SubResource("QuadMesh_8a53d")
+skeleton = NodePath("../..")
+
+[node name="Root Scene" parent="." instance=ExtResource("13_ecl7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8345, -0.5, -13.3797)
+
+[node name="Table_02" parent="Root Scene/RootNode" index="21"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 3.20375, -0.050363, 4.4404)
+
+[node name="models" parent="." instance=ExtResource("14_sodfa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.321, 0, -6.03643)
+
+[node name="C_021" parent="models" index="193"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11.9828, -0.616378, -11.0601)
+
+[node name="Colchon_001" parent="models" index="344"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0275, -1.26731, 18.1939)
+
+[node name="Litera" parent="models" index="345"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0464, -0.414106, 18.2111)
+
+[node name="Root Scene2" parent="." instance=ExtResource("16_q8mok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0177, -0.5, -15.3418)
+
+[node name="Tree_big" parent="." instance=ExtResource("17_f38ih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92347, -0.5, -12.4362)
+
+[node name="Mines" parent="." instance=ExtResource("19_pmssq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -153.67, -1.90735e-06, -39.628)
+
+[node name="Locker_01" parent="Mines" index="40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02811, 1.27895, 3.85409)
+
+[node name="Root Scene3" parent="." instance=ExtResource("15_6ymgf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.31363, 0, -70.9604)
+
+[node name="Barrel_1" parent="Root Scene3/RootNode" index="14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.141, 0.00808454, -69.4512)
+
+[node name="Barrel_2" parent="Root Scene3/RootNode" index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.141, 0.00808454, -69.4512)
+
+[node name="Box_wide_wood" parent="Root Scene3/RootNode" index="17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9148, 0.0177786, -72.0161)
+
+[node name="Box_wood" parent="Root Scene3/RootNode" index="18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0092, 0.0022502, -72.0679)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_nq1kt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("BoxMesh_bq716")
+skeleton = NodePath("../../Groundc")
+
+[editable path="Root Scene"]
+[editable path="models"]
+[editable path="Mines"]
+[editable path="Root Scene3"]

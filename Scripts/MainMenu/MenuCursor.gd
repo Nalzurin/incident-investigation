@@ -2,9 +2,12 @@ extends Label
 
 @export var  menu_parent : VBoxContainer
 @export var cursor_offset : Vector2
+@onready var main_menu = $".."
 
 var cursor_index = 0
 var docToggled = false
+var selectionToggled = false
+var is_menu = false
 func get_menu_item_at_index(index : int ) -> Control:
 	if menu_parent == null:
 		return null
@@ -23,29 +26,34 @@ func set_cursor_from_index(index : int ):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var input = 0
-	if(!docToggled):
-		if(Input.is_action_just_pressed("left")):
-			input -= 1
-		if(Input.is_action_just_pressed("backward")):
-			input += 1
-		if(Input.is_action_just_pressed("forward")):
-			input -= 1
-		if(Input.is_action_just_pressed("right")):
-			input += 1
-	set_cursor_from_index(cursor_index + input)
-	if(Input.is_action_just_pressed("ui_select")):
-		if(!docToggled):
-			var current_menu_item = get_menu_item_at_index(cursor_index)
-			if current_menu_item != null and current_menu_item.has_method("cursor_selected"):
-				current_menu_item.cursor_selected()
+	if(is_menu):
+		var input = 0
+		if(!docToggled and !selectionToggled):
+			if(Input.is_action_just_pressed("left")):
+				input -= 1
+			if(Input.is_action_just_pressed("backward")):
+				input += 1
+			if(Input.is_action_just_pressed("forward")):
+				input -= 1
+			if(Input.is_action_just_pressed("right")):
+				input += 1
+		set_cursor_from_index(cursor_index + input)
+		if(Input.is_action_just_pressed("ui_select")):
+			if(!docToggled):
+				var current_menu_item = get_menu_item_at_index(cursor_index)
+				if current_menu_item != null and current_menu_item.has_method("cursor_selected"):
+					current_menu_item.cursor_selected()
+			else:
+				main_menu._document_close()
 
 func _on_main_menu_menu_changed(new_menu):
 	menu_parent = new_menu
 	set_cursor_from_index(0)
 	pass # Replace with function body.
 
-
+func _on_settings_menu_selection_toggled():
+	selectionToggled = !selectionToggled
+	print(selectionToggled)
 func _on_main_menu_doc_toggled():
 	docToggled = !docToggled
 	print(docToggled)

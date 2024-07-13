@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddwp4wyk7qldj"]
+
+[ext_resource type="AudioStream" uid="uid://s3wi485efvqf" path="res://Assets/Sounds/debris-wood-branch-break-small-01.wav" id="1_xmybp"]
+[ext_resource type="AudioStream" uid="uid://32ingawlco46" path="res://Assets/Sounds/foley-wood-branches-break-short-01.wav" id="2_gts22"]
+[ext_resource type="Script" path="res://Scripts/SoundScripts/Footstep.gd" id="7_xaqtv"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g58li"]
+streams_count = 2
+stream_0/stream = ExtResource("1_xmybp")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_gts22")
+stream_1/weight = 1.0
+
+[node name="BranchsnapPlayer" type="AudioStreamPlayer3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+stream = SubResource("AudioStreamRandomizer_g58li")
+volume_db = 5.0
+autoplay = true
+script = ExtResource("7_xaqtv")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

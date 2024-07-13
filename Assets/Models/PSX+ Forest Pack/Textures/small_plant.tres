@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b415rxmmsu637"]
+
+[ext_resource type="Texture2D" uid="uid://hl1v6ayvjvv0" path="res://Assets/Models/PSX+ Forest Pack/Textures/small_plant.tga" id="1_qmrjb"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.75
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_qmrjb")

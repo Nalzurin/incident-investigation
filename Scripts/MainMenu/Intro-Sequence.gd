@@ -6,12 +6,25 @@ extends Node
 @export var Cognitohazards : TextureRect
 @export var IntroSequence : Control
 @export var MainMenu : Control
+@export var Cursor : Label
 var doOnce = false
+#debug skip
+var skip_intro = false
+@onready var color_rect = $CanvasLayer/ColorRect
+
+func _ready():
+	if(!GameManager.is_web):
+		color_rect.visible = true
+		
 func _input(event):
 	if(!doOnce and event is InputEventMouseButton):
 		doOnce = true
 		ClickAnywhere.visible = false
-		_do()
+		if(skip_intro):
+			MainMenu.visible = true
+			Cursor.is_menu = true
+		else:
+			await _do()
 	pass # Replace with function body.
 func _do():
 	SoundManager.play_VHSnoise()
@@ -30,6 +43,8 @@ func _do():
 	await(get_tree().create_timer(4).timeout)
 	IntroSequence.visible = false
 	MainMenu.visible = true
+	Cursor.is_menu = true
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

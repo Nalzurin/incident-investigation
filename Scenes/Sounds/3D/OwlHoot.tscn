@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsysvxlxa7b4t"]
+
+[ext_resource type="AudioStream" uid="uid://ciauol4nbjnrf" path="res://Assets/Sounds/animal-bird-of-prey-eagle-owl-in-the-forest-01.wav" id="1_htbkd"]
+[ext_resource type="AudioStream" uid="uid://duwrw4hyoa5dj" path="res://Assets/Sounds/animal-bird-of-prey-eagle-owl-in-the-forest-02.wav" id="2_cboqb"]
+[ext_resource type="AudioStream" uid="uid://7bauths8yma6" path="res://Assets/Sounds/animal-bird-of-prey-eagle-owl-in-the-forest-03.wav" id="3_gj81r"]
+[ext_resource type="Script" path="res://Scripts/SoundScripts/Footstep.gd" id="3_lifcw"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ebxen"]
+streams_count = 3
+stream_0/stream = ExtResource("1_htbkd")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_cboqb")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_gj81r")
+stream_2/weight = 1.0
+
+[node name="BranchsnapPlayer" type="AudioStreamPlayer3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+stream = SubResource("AudioStreamRandomizer_ebxen")
+volume_db = 5.0
+autoplay = true
+script = ExtResource("3_lifcw")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

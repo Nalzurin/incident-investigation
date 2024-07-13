@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://uww5j81lkts"]
+
+[ext_resource type="Texture2D" uid="uid://8hlt03jsonw2" path="res://Assets/Models/Industrial_exterior_v2/Textures/Cargo_1.png" id="1_olqtv"]
+[ext_resource type="Texture2D" uid="uid://bwk1ok5ijygvu" path="res://Assets/Models/Industrial_exterior_v2/Textures/Cargo_1_n.png" id="2_jovpw"]
+
+[resource]
+albedo_texture = ExtResource("1_olqtv")
+normal_enabled = true
+normal_texture = ExtResource("2_jovpw")
+uv1_world_triplanar = true

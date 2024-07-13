@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://6iqsy51kpqou"]
+
+[ext_resource type="AudioStream" uid="uid://0igv5sb55v7j" path="res://Assets/Sounds/chase_.wav" id="1_m4ufr"]
+
+[node name="ChaseLoop" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_m4ufr")
+autoplay = true

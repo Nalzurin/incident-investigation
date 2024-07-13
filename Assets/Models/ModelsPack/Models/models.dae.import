@@ -1,0 +1,133 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://kfyljgrfphmu"
+path="res://.godot/imported/models.dae-39b07ff08c4462b25c06cdc32cf550e5.scn"
+
+[deps]
+
+source_file="res://Assets/Models/ModelsPack/Models/models.dae"
+dest_files=["res://.godot/imported/models.dae-39b07ff08c4462b25c06cdc32cf550e5.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Asphalt": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Asphalt.tres"
+},
+"Cardboard": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Cardboard.tres"
+},
+"Concrete_01": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Concrete.tres"
+},
+"Fabric": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Fabric.tres"
+},
+"Fabric_01": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Fabric_01.tres"
+},
+"Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Metal.tres"
+},
+"Metal_15": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Metal_15.tres"
+},
+"Plastic_01": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Plastic_01.tres"
+},
+"TV": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/TV.tres"
+},
+"TV_01": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/TV_01.tres"
+},
+"TV_02": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/TV_02.tres"
+},
+"TV_03": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/TV_03.tres"
+},
+"TV_04": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/TV_04.tres"
+},
+"TV_05": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/TV_05.tres"
+},
+"TV_06": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/TV_06.tres"
+},
+"Tiles_01": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Tiles_01.tres"
+},
+"Wire": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Wire.tres"
+},
+"Wire2": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Wire2.tres"
+},
+"Wire3": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Wire3.tres"
+},
+"Wood_03": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Wood_03.tres"
+},
+"Wood_05": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Wood_05.tres"
+},
+"Wood_12": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/Wood_12.tres"
+},
+"brick_02": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/brick_02.tres"
+},
+"ceiling": {
+"use_external/enabled": true,
+"use_external/path": "res://Assets/Models/ModelsPack/Texture/ceiling.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

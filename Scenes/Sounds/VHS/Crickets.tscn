@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8jre1w0mbsie"]
+
+[ext_resource type="AudioStream" uid="uid://b2x2gv0pkfucd" path="res://Assets/Sounds/atmo-forest-night-crickets-01.wav" id="1_1hltt"]
+[ext_resource type="AudioStream" uid="uid://yegb4tk3f3kk" path="res://Assets/Sounds/atmo-forest-night-crickets-02.wav" id="2_vc2ms"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3mxsn"]
+streams_count = 2
+stream_0/stream = ExtResource("1_1hltt")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_vc2ms")
+stream_1/weight = 1.0
+
+[node name="Crickets" type="AudioStreamPlayer2D"]
+stream = SubResource("AudioStreamRandomizer_3mxsn")
+volume_db = 5.0
+autoplay = true

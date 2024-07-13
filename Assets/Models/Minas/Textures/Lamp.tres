@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c0r236v784kvl"]
+
+[ext_resource type="Texture2D" uid="uid://b3mfosc5a5mic" path="res://Assets/Models/Minas/Textures/Lamp.png" id="1_cd2p4"]
+
+[resource]
+albedo_texture = ExtResource("1_cd2p4")

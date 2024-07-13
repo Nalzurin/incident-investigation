@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm02pfbq6sia6"]
+
+[ext_resource type="AudioStream" uid="uid://dojq27r2u8q8j" path="res://Assets/Sounds/footstep_4.wav" id="1_rela1"]
+[ext_resource type="AudioStream" uid="uid://cfwrwsaxkktjb" path="res://Assets/Sounds/footstep_3.wav" id="2_nn52f"]
+[ext_resource type="AudioStream" uid="uid://djya6t7i4xqq" path="res://Assets/Sounds/footstep_2.wav" id="3_0br44"]
+[ext_resource type="AudioStream" uid="uid://cvyubckd4rd30" path="res://Assets/Sounds/footstep_1.wav" id="4_uv1vm"]
+[ext_resource type="Script" path="res://Scripts/SoundScripts/Footstep.gd" id="7_usdtg"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o27ut"]
+streams_count = 4
+stream_0/stream = ExtResource("1_rela1")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("2_nn52f")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("3_0br44")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("4_uv1vm")
+stream_3/weight = 1.0
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+stream = SubResource("AudioStreamRandomizer_o27ut")
+autoplay = true
+script = ExtResource("7_usdtg")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

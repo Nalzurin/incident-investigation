@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dgt3f064adih3"]
+
+[ext_resource type="Texture2D" uid="uid://c7tmtjiakin8m" path="res://Assets/Models/PSX+ Forest Pack/Textures/rock.png" id="1_hgtbe"]
+
+[resource]
+albedo_texture = ExtResource("1_hgtbe")

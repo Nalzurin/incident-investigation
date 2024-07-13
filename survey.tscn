@@ -1,0 +1,1614 @@
+[gd_scene load_steps=28 format=3 uid="uid://dx2pcy3d3hi0f"]
+
+[ext_resource type="Script" path="res://Scripts/Survey.gd" id="1_2gbe6"]
+[ext_resource type="Theme" uid="uid://dgf42gpxjh5n0" path="res://Assets/Themes/GUI.tres" id="2_60rxq"]
+[ext_resource type="Texture2D" uid="uid://dyyfcvmu3vemc" path="res://Assets/Images/Button-Unchecked.png" id="3_6husk"]
+[ext_resource type="FontFile" uid="uid://e1r5pqworu7j" path="res://Assets/Fonts/Roboto-Regular.ttf" id="3_eu412"]
+[ext_resource type="Texture2D" uid="uid://cxtmp3mlv4all" path="res://Assets/Images/button-checked.png" id="4_lhqw5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjwbj"]
+bg_color = Color(0.054902, 0.054902, 0.054902, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_u2pag"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_4hlcl"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_65xej"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_3qwjc"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_mrllw"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_s7oh7"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_utp3e"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_xhlk3"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_e7ecd"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_axuhs"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ftxqk"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_bgmju"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_2fwxf"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_14ggg"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_1d6q7"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_dn7xp"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_df2xo"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_e4euj"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_1ollp"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_dop16"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_gl7d3"]
+
+[node name="Survey" type="Control" node_paths=PackedStringArray("CluesNum", "PlayerState")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2gbe6")
+CluesNum = NodePath("EndScreen/VBoxContainer/Label2")
+PlayerState = NodePath("EndScreen/Label3")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yjwbj")
+
+[node name="EndScreen" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Label3" type="Label" parent="EndScreen"]
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+text = "Lost contact with employee"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndScreen"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+text = "Clues found"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="EndScreen/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Survey" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+custom_minimum_size = Vector2(300, 180)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label3" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 8
+text = "Liho Corporation Incident Report - Template 37-B"
+
+[node name="Label4" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Incident ID: #77-HZ-346
+Investigator ID: #99-452
+Date:  July 8 1984
+Time: 9:35 PM
+Location: [REDACTED]"
+
+[node name="1_ Incident Overview" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "1. Incident Overview"
+
+[node name="IncidentTypeLabel" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Incident Type:"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="IncidentType" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_u2pag")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Equipment Malfunction"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_u2pag")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Environmental Hazard"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType/HBoxContainer3"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_u2pag")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType/HBoxContainer3"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Unauthorized Entry"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType/HBoxContainer4"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_u2pag")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer/IncidentType/HBoxContainer4"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Biological Hazard"
+
+[node name="IncidentSeverityLabel" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Incident Type:"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="IncidentSeverity" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4hlcl")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Low"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4hlcl")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Medium"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity/HBoxContainer3"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4hlcl")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity/HBoxContainer3"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "High"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity/HBoxContainer4"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4hlcl")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer2/IncidentSeverity/HBoxContainer4"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "CRitical"
+
+[node name="Incident Details" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "1. Incident Overview"
+
+[node name="Resolved" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Has the incident been resolved?"
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer3"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer3/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer3/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_65xej")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer3/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer3/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer3/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_65xej")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer3/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="third-party" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Was the incident caused by third-party actions?"
+
+[node name="MarginContainer4" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="third-party" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer4"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer4/third-party"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer4/third-party/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_3qwjc")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer4/third-party/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer4/third-party"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer4/third-party/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_3qwjc")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer4/third-party/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="ongoing" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Is there any ongoing threat?"
+
+[node name="MarginContainer5" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer5"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer5/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer5/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mrllw")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer5/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer5/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer5/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_mrllw")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer5/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="casualties" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Were there any casualties?"
+
+[node name="MarginContainer6" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_s7oh7")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_s7oh7")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6/Resolved"]
+layout_mode = 2
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6/Resolved/HBoxContainer3"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "if Yes, number of casualties:"
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/ScrollContainer/Survey/MarginContainer6/Resolved/HBoxContainer3"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/caret_width = 0
+theme_override_fonts/font = ExtResource("3_eu412")
+theme_override_font_sizes/font_size = 6
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="Findings" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "3. Investigation Findings"
+
+[node name="equipment" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Evidence of Equipment Failure:"
+
+[node name="MarginContainer7" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer7"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer7/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer7/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_utp3e")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer7/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer7/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer7/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_utp3e")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer7/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="biological" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Evidence of Biological Contamination:"
+
+[node name="MarginContainer8" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="third-party" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer8"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer8/third-party"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer8/third-party/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xhlk3")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer8/third-party/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer8/third-party"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer8/third-party/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xhlk3")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer8/third-party/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="unauthorized" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Signs of Unauthorized Entry:"
+
+[node name="MarginContainer9" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer9"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer9/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer9/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e7ecd")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer9/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer9/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer9/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e7ecd")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer9/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="environmental" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Environmental Hazards Present:"
+
+[node name="MarginContainer10" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer10"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer10/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer10/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_axuhs")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer10/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer10/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer10/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_axuhs")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer10/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="unknown" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Presence of Unknown Entities:"
+
+[node name="MarginContainer11" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer11"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer11/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer11/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ftxqk")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer11/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer11/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer11/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ftxqk")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer11/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="actions_taken" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "4. Actions Taken"
+
+[node name="measures" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Containment Measures Implemented:"
+
+[node name="MarginContainer12" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer12"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer12/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer12/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_bgmju")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer12/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer12/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer12/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_bgmju")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer12/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="secured" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Site Secured:"
+
+[node name="MarginContainer14" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer14"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer14/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer14/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_2fwxf")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer14/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer14/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer14/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_2fwxf")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer14/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="recommendation" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "5. Recommendations"
+
+[node name="investigation" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Further Investigation Required:"
+
+[node name="MarginContainer13" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer13"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer13/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer13/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_14ggg")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer13/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer13/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer13/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_14ggg")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer13/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="repairs" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Immediate Repairs Needed:"
+
+[node name="MarginContainer15" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer15"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer15/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer15/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1d6q7")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer15/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer15/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer15/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1d6q7")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer15/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="quarantine" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Quarantine Area Required:"
+
+[node name="MarginContainer16" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer16"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer16/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer16/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dn7xp")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer16/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer16/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer16/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dn7xp")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer16/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="addendum" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Addendum:"
+
+[node name="protocols" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Containment and Safety Protocols Adhered To:"
+
+[node name="MarginContainer17" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer17"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer17/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer17/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_df2xo")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer17/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer17/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer17/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_df2xo")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer17/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="personnel" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Unauthorized Personnel Encountered:"
+
+[node name="MarginContainer18" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer18"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer18/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer18/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e4euj")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer18/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer18/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer18/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_e4euj")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer18/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="psych" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Psychological Evaluation Required Post-Incident:"
+
+[node name="MarginContainer19" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer19"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer19/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer19/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1ollp")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer19/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer19/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer19/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1ollp")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer19/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="sus" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Suspicious Activity Observed:"
+
+[node name="MarginContainer20" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer20"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer20/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer20/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dop16")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer20/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer20/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer20/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_dop16")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer20/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="recommend" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Recommendation for Increased Security Measures:"
+
+[node name="MarginContainer21" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Resolved" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer21"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer21/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer21/Resolved/HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_gl7d3")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer21/Resolved/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Yes"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/MarginContainer21/Resolved"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/ScrollContainer/Survey/MarginContainer21/Resolved/HBoxContainer2"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_gl7d3")
+texture_normal = ExtResource("3_6husk")
+texture_pressed = ExtResource("4_lhqw5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="1_ Incident Overview3" type="Label" parent="MarginContainer/ScrollContainer/Survey/MarginContainer21/Resolved/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "No"
+
+[node name="recommend2" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Investigator's Final Comments:"
+
+[node name="MarginContainer22" type="MarginContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/ScrollContainer/Survey/MarginContainer22"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_constants/caret_width = 0
+theme_override_fonts/font = ExtResource("3_eu412")
+theme_override_font_sizes/font_size = 6
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="end2" type="Label" parent="MarginContainer/ScrollContainer/Survey"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "Investigator Signature:
+Management Review: 
+"
+
+[node name="Resolved2" type="VBoxContainer" parent="MarginContainer/ScrollContainer/Survey"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer/Survey/Resolved2"]
+layout_mode = 2
+
+[node name="end" type="Label" parent="MarginContainer/ScrollContainer/Survey/Resolved2/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_60rxq")
+theme_override_font_sizes/font_size = 6
+text = "
+In Liho We Trust"
+
+[node name="Button" type="Button" parent="MarginContainer/ScrollContainer/Survey/Resolved2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_eu412")
+theme_override_font_sizes/font_size = 10
+text = "Submit"
+
+[node name="SurveyEnd" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -39.5
+offset_right = 125.0
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Label3" type="Label" parent="SurveyEnd"]
+layout_mode = 2
+theme = ExtResource("2_60rxq")
+text = "report sent"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="SurveyEnd"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_eu412")
+theme_override_font_sizes/font_size = 10
+text = "END SHIFT"
+
+[connection signal="pressed" from="MarginContainer/ScrollContainer/Survey/Resolved2/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="SurveyEnd/Button" to="." method="_on_end_shift_pressed"]

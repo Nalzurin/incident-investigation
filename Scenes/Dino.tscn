@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://cptediqubcys1"]
+
+[ext_resource type="Script" path="res://Scenes/Dino.gd" id="1_8e7tg"]
+[ext_resource type="Texture2D" uid="uid://c7uattkpyf27q" path="res://Assets/Images/Run-7_1_1.png" id="1_lqi2i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iplg"]
+atlas = ExtResource("1_lqi2i")
+region = Rect2(0, 0, 451, 626)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j28sw"]
+atlas = ExtResource("1_lqi2i")
+region = Rect2(451, 0, 451, 626)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gptw"]
+atlas = ExtResource("1_lqi2i")
+region = Rect2(902, 0, 451, 626)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr2t7"]
+atlas = ExtResource("1_lqi2i")
+region = Rect2(1353, 0, 451, 626)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vqmx"]
+atlas = ExtResource("1_lqi2i")
+region = Rect2(1804, 0, 451, 626)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8xlk"]
+atlas = ExtResource("1_lqi2i")
+region = Rect2(2255, 0, 451, 626)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f774y"]
+atlas = ExtResource("1_lqi2i")
+region = Rect2(2706, 0, 451, 626)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6p2b"]
+atlas = ExtResource("1_lqi2i")
+region = Rect2(3157, 0, 451, 626)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1pe0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iplg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j28sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gptw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr2t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vqmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8xlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f774y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6p2b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wixub"]
+height = 4.0
+
+[node name="Dino" type="CharacterBody3D"]
+script = ExtResource("1_8e7tg")
+
+[node name="DinoSprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_1pe0s")
+autoplay = "default"
+frame_progress = 0.50738
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CapsuleShape3D_wixub")
+disabled = true
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 2.0
+path_max_distance = 20.01

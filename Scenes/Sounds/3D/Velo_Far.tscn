@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://blvu0r7fnbcp2"]
+
+[ext_resource type="AudioStream" uid="uid://bwtqramipbfi5" path="res://Assets/Sounds/Velo_Distant.wav" id="1_mudeg"]
+[ext_resource type="Script" path="res://Scripts/SoundScripts/Footstep.gd" id="3_m4wv3"]
+
+[node name="VeloFarPlayer" type="AudioStreamPlayer3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+stream = ExtResource("1_mudeg")
+volume_db = 5.0
+autoplay = true
+script = ExtResource("3_m4wv3")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

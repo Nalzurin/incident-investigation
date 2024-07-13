@@ -16,6 +16,11 @@ func _physics_process(delta):
 			message.text = collider.prompt_message
 			if Input.is_action_just_pressed("interact"):
 				display_description(collider)
+		if collider is Interactable_Van:
+			prompt.text = "[E]"
+			message.text = collider.prompt_message
+			if Input.is_action_just_pressed("interact"):
+				collider.interact()
 
 
 func display_description(collider : Interactable):
